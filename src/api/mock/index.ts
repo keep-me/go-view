@@ -57,14 +57,37 @@ const mockProjectCreateData = {
   msg: '创建成功'
 }
 
-const mockProjectDetailData = {
-  code: 200,
-  data: {
-    id: '',
-    content: '{}',
-    status: -1
+// 空项目数据
+const emptyProjectData = {
+  editCanvasConfig: {
+    width: 1920,
+    height: 1080,
+    scale: 1,
+    chartThemeColor: 'dark-green',
+    chartCustomThemeColorInfo: null,
+    backgroundImage: '',
+    background: '',
+    selectColor: false,
+    chartThemeSetting: {},
+    filterShow: false,
+    refreshTime: 30
   },
-  msg: '获取成功'
+  requestGlobalConfig: {
+    requestOriginUrl: '',
+    requestParams: {
+      Params: {},
+      Header: {},
+      Body: {
+        'none': {},
+        'form-data': {},
+        'x-www-form-urlencoded': {},
+        'json': '',
+        'xml': ''
+      }
+    }
+  },
+  componentList: [],
+  editCanvasConfigVersion: '1.0.0'
 }
 
 const mockObject: MockMethod[] = [
@@ -219,8 +242,11 @@ const mockObject: MockMethod[] = [
         code: 200,
         data: {
           id: '',
-          content: '{}',
-          status: -1
+          projectName: '未命名项目',
+          indexImage: '',
+          remarks: '',
+          state: -1,
+          content: JSON.stringify(emptyProjectData)
         },
         msg: '获取成功'
       }
