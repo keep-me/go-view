@@ -22,6 +22,51 @@ export const threeEarth01Url = '/mock/threeEarth01Data'
 export const sankeyUrl = '/mock/sankey'
 export const graphUrl = '/mock/graphData'
 
+// 登录 mock 数据
+const mockLoginData = {
+  code: 200,
+  data: {
+    token: {
+      tokenName: 'token',
+      tokenValue: 'mock-token-' + Date.now()
+    },
+    userinfo: {
+      id: 1,
+      username: 'admin',
+      nickname: '管理员',
+      avatar: ''
+    }
+  },
+  msg: '登录成功'
+}
+
+const mockProjectListData = {
+  code: 200,
+  data: {
+    list: [],
+    total: 0
+  },
+  msg: '获取成功'
+}
+
+const mockProjectCreateData = {
+  code: 200,
+  data: {
+    id: 'mock-project-id-' + Date.now()
+  },
+  msg: '创建成功'
+}
+
+const mockProjectDetailData = {
+  code: 200,
+  data: {
+    id: '',
+    content: '{}',
+    status: -1
+  },
+  msg: '获取成功'
+}
+
 const mockObject: MockMethod[] = [
   {
     // 正则
@@ -114,6 +159,124 @@ const mockObject: MockMethod[] = [
     url: graphUrl,
     method: RequestHttpEnum.GET,
     response: () => test.graphData
+  },
+  // 登录接口
+  {
+    url: '/api/goview/sys/login',
+    method: RequestHttpEnum.POST,
+    response: () => {
+      return {
+        code: 200,
+        data: {
+          token: {
+            tokenName: 'token',
+            tokenValue: 'mock-token-' + Date.now()
+          },
+          userinfo: {
+            id: 1,
+            username: 'admin',
+            nickname: '管理员',
+            avatar: ''
+          }
+        },
+        msg: '登录成功'
+      }
+    }
+  },
+  // 登出接口
+  {
+    url: '/api/goview/sys/logout',
+    method: RequestHttpEnum.GET,
+    response: () => {
+      return {
+        code: 200,
+        data: null,
+        msg: '登出成功'
+      }
+    }
+  },
+  // 获取项目列表
+  {
+    url: '/api/goview/project/list',
+    method: RequestHttpEnum.GET,
+    response: () => {
+      return {
+        code: 200,
+        data: {
+          list: [],
+          total: 0
+        },
+        msg: '获取成功'
+      }
+    }
+  },
+  // 获取项目详情
+  {
+    url: /\/api\/goview\/project\/getData(|\?\S*)$/,
+    method: RequestHttpEnum.GET,
+    response: () => {
+      return {
+        code: 200,
+        data: {
+          id: '',
+          content: '{}',
+          status: -1
+        },
+        msg: '获取成功'
+      }
+    }
+  },
+  // 创建项目
+  {
+    url: '/api/goview/project/create',
+    method: RequestHttpEnum.POST,
+    response: () => {
+      return {
+        code: 200,
+        data: {
+          id: 'mock-project-id-' + Date.now()
+        },
+        msg: '创建成功'
+      }
+    }
+  },
+  // 编辑项目
+  {
+    url: '/api/goview/project/edit',
+    method: RequestHttpEnum.POST,
+    response: () => {
+      return {
+        code: 200,
+        data: null,
+        msg: '编辑成功'
+      }
+    }
+  },
+  // 删除项目
+  {
+    url: /\/api\/goview\/project\/delete(|\?\S*)$/,
+    method: RequestHttpEnum.GET,
+    response: () => {
+      return {
+        code: 200,
+        data: null,
+        msg: '删除成功'
+      }
+    }
+  },
+  // 获取OSS信息
+  {
+    url: '/api/goview/sys/getOssInfo',
+    method: RequestHttpEnum.GET,
+    response: () => {
+      return {
+        code: 200,
+        data: {
+          bucketURL: ''
+        },
+        msg: '获取成功'
+      }
+    }
   },
 ]
 

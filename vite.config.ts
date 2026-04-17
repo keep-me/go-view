@@ -45,15 +45,17 @@ export default ({ mode }) => defineConfig({
     host: true,
     open: true,
     port: 3000,
-    proxy: {
-      [axiosPre]: {
-        // @ts-ignore
-        target: loadEnv(mode, process.cwd()).VITE_DEV_PATH,
-        changeOrigin: true,
-        ws: true,
-        secure: true,
-      }
-    }
+    // 移除代理配置，使用 mock 服务器处理 API 请求
+    // 如果需要连接真实后端，可以重新启用代理配置
+    // proxy: {
+    //   [axiosPre]: {
+    //     // @ts-ignore
+    //     target: loadEnv(mode, process.cwd()).VITE_DEV_PATH,
+    //     changeOrigin: true,
+    //     ws: true,
+    //     secure: true,
+    //   }
+    // }
   },
   plugins: [
     vue(),

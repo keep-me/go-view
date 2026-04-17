@@ -35,37 +35,33 @@ $spacing-sizes: (
   5: 2.5,
 );
 
-// 变亮值
-$--light-shalow: 2%;
-
+// 变亮值 - 使用预计算的颜色值避免 lighten() 弃用警告
 // 白色
 $--color-light-bg: #fff;
 $--color-light-bg-1: #fafafc;
-$--color-light-bg-1-shallow: lighten($--color-light-bg-1, $--light-shalow);
+$--color-light-bg-1-shallow: #fcfcfe;
 $--color-light-bg-2: #f2f3f5;
-$--color-light-bg-2-shallow: lighten($--color-light-bg-2, $--light-shalow);
+$--color-light-bg-2-shallow: #f4f5f7;
 $--color-light-bg-3: #e5e6eb;
-$--color-light-bg-3-shallow: lighten($--color-light-bg-3, $--light-shalow);
+$--color-light-bg-3-shallow: #e7e8ed;
 $--color-light-bg-4: #e3e3e4;
-$--color-light-bg-4-shallow: lighten($--color-light-bg-4, $--light-shalow);
+$--color-light-bg-4-shallow: #e5e5e6;
 $--color-light-bg-5: #bebebe;
-$--color-light-bg-5-shallow: lighten($--color-light-bg-5, $--light-shalow);
+$--color-light-bg-5-shallow: #c4c4c4;
 
-// 变暗值
-$--dark-shalow: 2%;
-
+// 变暗值 - 使用预计算的颜色值避免 darken() 弃用警告
 // 黑色
 $--color-dark-black: #000;
 $--color-dark-bg-1: #18181c;
-$--color-dark-bg-1-shallow: darken($--color-dark-bg-1, $--dark-shalow);
+$--color-dark-bg-1-shallow: #161619;
 $--color-dark-bg-2: #232324;
-$--color-dark-bg-2-shallow: darken($--color-dark-bg-2, $--dark-shalow);
+$--color-dark-bg-2-shallow: #202021;
 $--color-dark-bg-3: #2a2a2b;
-$--color-dark-bg-3-shallow: darken($--color-dark-bg-3, $--dark-shalow);
+$--color-dark-bg-3-shallow: #272728;
 $--color-dark-bg-4: #313132;
-$--color-dark-bg-4-shallow: darken($--color-dark-bg-4, $--dark-shalow);
+$--color-dark-bg-4-shallow: #2e2e2f;
 $--color-dark-bg-5: #373739;
-$--color-dark-bg-5-shallow: darken($--color-dark-bg-5, $--dark-shalow);
+$--color-dark-bg-5-shallow: #343436;
 
 // 最大宽度
 $--max-width: 1920px;
