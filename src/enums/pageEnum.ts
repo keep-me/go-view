@@ -19,11 +19,14 @@ export enum EditEnum {
 }
 
 export enum CustomChartEnum {
+  // 自定义图表（父路由）
+  CUSTOM_CHART = '/custom-chart',
+  CUSTOM_CHART_NAME = 'CustomChart',
   // 自定义图表列表
-  CUSTOM_CHART_LIST = 'list',
+  CUSTOM_CHART_LIST = '/custom-chart/list',
   CUSTOM_CHART_LIST_NAME = 'CustomChartList',
   // 自定义图表编辑器
-  CUSTOM_CHART_EDIT = 'edit/:id(.*)*',
+  CUSTOM_CHART_EDIT = '/custom-chart/edit/:id(.*)*',
   CUSTOM_CHART_EDIT_NAME = 'CustomChartEdit',
 }
 

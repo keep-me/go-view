@@ -8,8 +8,8 @@ const importPath = {
 }
 
 const customChartRoutes: RouteRecordRaw = {
-  path: '/custom-chart',
-  name: CustomChartEnum.CUSTOM_CHART_LIST_NAME,
+  path: CustomChartEnum.CUSTOM_CHART,
+  name: CustomChartEnum.CUSTOM_CHART_NAME,
   component: importPath['CustomChartEnum.CUSTOM_CHART_LIST_NAME'],
   redirect: CustomChartEnum.CUSTOM_CHART_LIST,
   meta: {
@@ -19,7 +19,7 @@ const customChartRoutes: RouteRecordRaw = {
   children: [
     {
       path: CustomChartEnum.CUSTOM_CHART_LIST,
-      name: CustomChartEnum.CUSTOM_CHART_LIST_NAME + 'List',
+      name: CustomChartEnum.CUSTOM_CHART_LIST_NAME,
       component: importPath['CustomChartEnum.CUSTOM_CHART_LIST_NAME.List'],
       meta: {
         title: '自定义图表列表'

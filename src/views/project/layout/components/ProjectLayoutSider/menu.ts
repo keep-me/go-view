@@ -74,7 +74,7 @@ export const menuOptionsInit = () => {
           RouterLink,
           {
             to: {
-              name: CustomChartEnum.CUSTOM_CHART_LIST_NAME + 'List',
+              name: CustomChartEnum.CUSTOM_CHART_LIST_NAME,
             },
           },
           { default: () => '自定义图表' }
