@@ -177,7 +177,8 @@ export enum PackagesCategoryEnum {
   INFORMATIONS = 'Informations',
   PHOTOS = 'Photos',
   ICONS = 'Icons',
-  DECORATES = 'Decorates'
+  DECORATES = 'Decorates',
+  CUSTOM = 'Custom'
 }
 
 // 包分类名称
@@ -187,7 +188,8 @@ export enum PackagesCategoryName {
   INFORMATIONS = '信息',
   PHOTOS = '图片',
   ICONS = '图标',
-  DECORATES = '小组件'
+  DECORATES = '小组件',
+  CUSTOM = '自定义'
 }
 
 // 获取组件
@@ -204,4 +206,35 @@ export type PackagesType = {
   [PackagesCategoryEnum.PHOTOS]: ConfigType[]
   [PackagesCategoryEnum.ICONS]: ConfigType[]
   [PackagesCategoryEnum.DECORATES]: ConfigType[]
+  [PackagesCategoryEnum.CUSTOM]: ConfigType[]
+}
+
+// 自定义图表组件完整配置
+export interface CustomChartConfig {
+  id: string
+  name: string
+  description?: string
+  // ECharts 原始配置
+  option: any
+  // 默认数据
+  dataset?: EchartsDataType
+  // 预览图（base64或URL）
+  previewImage?: string
+  // 创建时间
+  createdAt: number
+  // 更新时间
+  updatedAt: number
+  // 是否公开分享
+  isShared: boolean
+  // 分享ID
+  shareId?: string
+}
+
+// 自定义图表分类枚举
+export enum CustomChartCategoryEnum {
+  CUSTOM = 'CustomCharts'
+}
+
+export enum CustomChartCategoryEnumName {
+  CUSTOM = '自定义图表'
 }

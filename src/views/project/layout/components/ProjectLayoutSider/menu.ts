@@ -1,11 +1,11 @@
 import { reactive, h } from 'vue'
 import { renderIcon } from '@/utils'
 import { RouterLink } from 'vue-router'
-import { PageEnum } from '@/enums/pageEnum'
+import { PageEnum, CustomChartEnum } from '@/enums/pageEnum'
 import { MenuOption, MenuGroupOption } from 'naive-ui'
 import { icon } from '@/plugins'
 
-const { GridIcon, TvOutlineIcon } = icon.ionicons5
+const { GridIcon, TvOutlineIcon, BarChartOutlineIcon } = icon.ionicons5
 const { StoreIcon, ObjectStorageIcon, DevicesIcon } = icon.carbon
 export const renderMenuLabel = (option: MenuOption | MenuGroupOption) => {
   return option.label
@@ -66,6 +66,25 @@ export const menuOptionsInit = () => {
 
     {
       key: 'divider-2',
+      type: 'divider',
+    },
+    {
+      label: () =>
+        h(
+          RouterLink,
+          {
+            to: {
+              name: CustomChartEnum.CUSTOM_CHART_LIST_NAME + 'List',
+            },
+          },
+          { default: () => '自定义图表' }
+        ),
+      key: CustomChartEnum.CUSTOM_CHART_LIST_NAME,
+      icon: renderIcon(BarChartOutlineIcon),
+    },
+
+    {
+      key: 'divider-3',
       type: 'divider',
     },
     {

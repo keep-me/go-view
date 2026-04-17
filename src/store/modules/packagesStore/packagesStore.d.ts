@@ -1,9 +1,10 @@
-import { PackagesType, ConfigType } from '@/packages/index.d'
+import { PackagesType, ConfigType, CustomChartConfig } from '@/packages/index.d'
 
 export { ConfigType }
 
 export { PackagesType }
 export interface PackagesStoreType {
-  packagesList: PackagesType,
+  packagesList: PackagesType
   newPhoto?: ConfigType
+  customCharts: CustomChartConfig[]
 }

@@ -18,6 +18,15 @@ export enum EditEnum {
   CHART_EDIT_NAME = 'ChartEdit',
 }
 
+export enum CustomChartEnum {
+  // 自定义图表列表
+  CUSTOM_CHART_LIST = '/custom-chart/list',
+  CUSTOM_CHART_LIST_NAME = 'CustomChartList',
+  // 自定义图表编辑器
+  CUSTOM_CHART_EDIT = '/custom-chart/edit/:id(.*)*',
+  CUSTOM_CHART_EDIT_NAME = 'CustomChartEdit',
+}
+
 export enum PageEnum {
   // 登录
   BASE_LOGIN = '/login',
